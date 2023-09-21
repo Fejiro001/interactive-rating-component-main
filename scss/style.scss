@@ -1,0 +1,44 @@
+@use 'reset';
+
+$primary: hsl(25, 97%, 53%);
+
+$neutral-100: hsl(0, 0%, 100%);
+$neutral-200: hsl(217, 12%, 63%);
+$neutral-300: hsl(216, 12%, 54%, .15);
+
+$bg-400: hsl(213, 19%, 18%, .5);
+$bg-500: hsl(216, 12%, 8%);
+
+$margin-pad: 1.5rem;
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Overpass', sans-serif;
+    background-color: $bg-500;
+    color: white;
+}
+
+main {
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating {
+    background-color: $bg-400;
+    width: 22rem;
+    padding: $margin-pad;
+    margin: $margin-pad;
+    border-radius: $margin-pad;
+    display: grid;
+    gap: $margin-pad;
+}
+
+.star {
+    background-color: $neutral-300;
+    width: fit-content;
+    padding: .8rem;
+    border-radius: 50%;
+}

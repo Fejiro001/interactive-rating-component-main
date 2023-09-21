@@ -8,11 +8,6 @@
   margin: 0;
 }
 
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
 img,
 picture,
 video,
@@ -37,4 +32,37 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Overpass", sans-serif;
+  background-color: hsl(216, 12%, 8%);
+  color: white;
+}
+
+main {
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating {
+  background-color: hsla(213, 19%, 18%, 0.5);
+  width: 22rem;
+  padding: 1.5rem;
+  margin: 1.5rem;
+  border-radius: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.star {
+  background-color: hsla(216, 12%, 54%, 0.15);
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.8rem;
+  border-radius: 50%;
 }
