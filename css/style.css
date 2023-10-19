@@ -36,22 +36,23 @@ h6 {
 
 body {
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
   font-family: "Overpass", sans-serif;
   background-color: hsl(216, 12%, 8%);
-  color: white;
 }
 
 main {
-  height: 100svh;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
+/* RATING */
 .rating {
-  background-color: hsla(213, 19%, 18%, 0.5);
-  width: 22rem;
+  background-color: hsl(213, 19%, 18%);
+  width: 24rem;
   padding: 1.5rem;
   margin: 1.5rem;
   border-radius: 1.5rem;
@@ -65,4 +66,123 @@ main {
   width: fit-content;
   padding: 0.8rem;
   border-radius: 50%;
+}
+.star__icon {
+  max-width: 100%;
+}
+
+.feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.feedback__heading {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: hsl(0, 0%, 100%);
+}
+.feedback__body {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: hsl(217, 12%, 63%);
+}
+
+.rate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+.rate li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+.rate button {
+  border-radius: 50%;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  background-color: hsla(216, 12%, 54%, 0.15);
+  color: hsl(217, 12%, 63%);
+}
+.rate button:hover {
+  background-color: hsl(217, 12%, 63%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+.rate button:focus {
+  background-color: hsl(25, 97%, 53%);
+  color: hsl(0, 0%, 100%);
+}
+
+.submit {
+  background-color: hsl(25, 97%, 53%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: 2rem;
+  padding-block: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.submit:hover {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(25, 97%, 53%);
+}
+
+.thank-you {
+  background-color: hsl(213, 19%, 18%);
+  width: 24rem;
+  padding: 1.5rem;
+  margin: 1.5rem;
+  border-radius: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+  display: none;
+  position: absolute;
+  justify-content: center;
+}
+.thank-you div {
+  display: flex;
+  justify-content: center;
+}
+
+.answer {
+  background-color: hsla(216, 12%, 54%, 0.15);
+  margin-inline: 4rem;
+  padding-block: 0.5rem;
+  border-radius: 2rem;
+  text-align: center;
+}
+.answer p {
+  color: hsl(25, 97%, 53%);
+}
+
+.confirmed {
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+}
+.confirmed__heading {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: hsl(0, 0%, 100%);
+}
+.confirmed__body {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: hsl(217, 12%, 63%);
+}
+
+.attribution {
+  color: hsl(0, 0%, 100%);
+}
+
+.attribution a {
+  color: hsl(25, 97%, 53%);
+  text-decoration: none;
 }

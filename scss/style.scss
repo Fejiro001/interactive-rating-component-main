@@ -6,29 +6,26 @@ $neutral-100: hsl(0, 0%, 100%);
 $neutral-200: hsl(217, 12%, 63%);
 $neutral-300: hsl(216, 12%, 54%, .15);
 
-$bg-400: hsl(213, 19%, 18%, .5);
+$bg-400: hsl(213, 19%, 18%);
 $bg-500: hsl(216, 12%, 8%);
 
 $margin-pad: 1.5rem;
 
-body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    font-family: 'Overpass', sans-serif;
-    background-color: $bg-500;
-    color: white;
+@mixin heading {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: $neutral-100;
 }
 
-main {
-    height: 100svh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@mixin paragraph {
+    font-weight: 400;
+    font-size: .9rem;
+    color: $neutral-200;
 }
 
-.rating {
+@mixin section {
     background-color: $bg-400;
-    width: 22rem;
+    width: 24rem;
     padding: $margin-pad;
     margin: $margin-pad;
     border-radius: $margin-pad;
@@ -36,9 +33,147 @@ main {
     gap: $margin-pad;
 }
 
+body {
+    line-height: 1.5;
+    font-family: 'Overpass', sans-serif;
+    background-color: $bg-500;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* RATING */
+.rating {
+    @include section;
+}
+
 .star {
     background-color: $neutral-300;
     width: fit-content;
     padding: .8rem;
     border-radius: 50%;
+
+    &__icon {
+        max-width: 100%;
+    }
+}
+
+.feedback {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &__heading {
+        @include heading;
+    }
+
+    &__body {
+        @include paragraph;
+    }
+}
+
+.rate {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+    }
+
+    button {
+        border-radius: 50%;
+        border: none;
+        width: 3rem;
+        height: 3rem;
+        background-color: $neutral-300;
+        color: $neutral-200;
+
+        &:hover {
+            background-color: $neutral-200;
+            color: $neutral-100;
+            cursor: pointer;
+        }
+
+        &:focus {
+            background-color: $primary;
+            color: $neutral-100;
+        }
+    }
+
+}
+
+.submit {
+    background-color: $primary;
+    color: $neutral-100;
+    border: none;
+    border-radius: 2rem;
+    padding-block: .8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $neutral-100;
+        color: $primary;
+    }
+}
+
+.thank-you {
+    @include section;
+    display: none;
+    position: absolute;
+    justify-content: center;
+
+    div {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.answer {
+    background-color: $neutral-300;
+    margin-inline: 4rem;
+    padding-block: .5rem;
+    border-radius: 2rem;
+    text-align: center;
+
+    p {
+        color: $primary;
+    }
+}
+
+.confirmed {
+    flex-direction: column;
+    text-align: center;
+    gap: .5rem;
+
+    &__heading {
+        @include heading;
+    }
+
+    &__body {
+        @include paragraph;
+    }
+}
+
+.attribution {
+    color: $neutral-100;
+}
+
+.attribution a {
+    color: $primary;
+    text-decoration: none;
 }
