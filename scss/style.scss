@@ -171,9 +171,9 @@ main {
 
 .attribution {
     color: $neutral-100;
-}
-
-.attribution a {
-    color: $primary;
-    text-decoration: none;
+    
+    a {
+        color: $primary;
+        text-decoration: none;
+    }
 }
