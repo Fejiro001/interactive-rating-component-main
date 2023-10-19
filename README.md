@@ -29,14 +29,19 @@ Users should be able to:
 
 ### Screenshot
 
+- Feedback component
 ![Feedback](./screenshots/thank-you-modal.png)
+
+- Feedback component when in active and focus states
 ![Active and Focus states](./screenshots/active-focus-states.png)
+
+- Thank you modal
 ![Thank You modal](./screenshots/thank-you-modal.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution](https://github.com/Fejiro001/interactive-rating-component-main)
+- Live Site URL: [Live Site](https://fejiro001.github.io/interactive-rating-component-main/)
 
 ## My process
 
@@ -51,7 +56,7 @@ Users should be able to:
 
 ### What I learned
 
-Used event delegation that helped me handle events efficiently for multiple buttons:
+Used event delegation which helped me handle events more efficiently for multiple elements:
 ```js
 numberRating.addEventListener("click", (event) => {
     if (event.target.tagName === "BUTTON") {
@@ -60,7 +65,7 @@ numberRating.addEventListener("click", (event) => {
 });
 ```
 
-Exited the modal by targeting the main nody when clicked:
+Created an event listener for when the modal is exited by targeting the main body when clicked:
 ```js
 main.addEventListener('click', (event) => {
     if (event.target === main) {
@@ -74,7 +79,7 @@ I want to expand more on event handling and best practices.
 
 ### Useful resources
 
-- ChatGPT really helped me for the event handling part
+- ChatGPT really helped me understand event delegation
 
 ## Author
 
@@ -84,4 +89,4 @@ I want to expand more on event handling and best practices.
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+- Adrian's post on Twitter helped me know about event delegation, so a big shout-out to him - [@wydmanski_](https://twitter.com/wydmanski_)
