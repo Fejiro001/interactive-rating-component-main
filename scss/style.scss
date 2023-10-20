@@ -9,7 +9,7 @@ $neutral-300: hsl(216, 12%, 54%, .15);
 $bg-400: hsl(213, 19%, 18%);
 $bg-500: hsl(216, 12%, 8%);
 
-$margin-pad: 1.5rem;
+$pad: 1.5rem;
 
 @mixin heading {
     font-weight: 700;
@@ -21,21 +21,26 @@ $margin-pad: 1.5rem;
     font-weight: 400;
     font-size: .9rem;
     color: $neutral-200;
+
+    @media (min-width: 800px) {
+        font-size: .9rem;
+    }
 }
 
 @mixin section {
     background-color: $bg-400;
-    width: 24rem;
-    padding: $margin-pad;
-    margin: $margin-pad;
-    border-radius: $margin-pad;
+    max-width: 24rem;
+    padding: $pad;
+    margin: 1rem;
+    border-radius: $pad;
     display: grid;
-    gap: $margin-pad;
+    gap: $pad;
 }
 
 body {
     line-height: 1.5;
     font-family: 'Overpass', sans-serif;
+    height: 100vh;
     background-color: $bg-500;
 }
 
@@ -45,12 +50,12 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 /* RATING */
 .rating {
     @include section;
+    position: relative;
 }
 
 .star {
@@ -60,7 +65,7 @@ main {
     border-radius: 50%;
 
     &__icon {
-        max-width: 100%;
+        width: 100%;
     }
 }
 
@@ -81,8 +86,10 @@ main {
 .rate {
     display: flex;
     flex-direction: row;
+    // flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: .5rem;
     padding: 0;
 
     li {
@@ -95,8 +102,9 @@ main {
     button {
         border-radius: 50%;
         border: none;
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
         background-color: $neutral-300;
         color: $neutral-200;
 
@@ -110,6 +118,11 @@ main {
             background-color: $primary;
             color: $neutral-100;
         }
+
+        @media (min-width: 400px) {
+            width: 3rem;
+            height: 3rem;
+        }
     }
 
 }
@@ -122,6 +135,7 @@ main {
     padding-block: .8rem;
     text-transform: uppercase;
     font-weight: 700;
+    font-size: 1rem;
     letter-spacing: 2px;
     cursor: pointer;
 
@@ -144,13 +158,13 @@ main {
 }
 
 .answer {
-    background-color: $neutral-300;
-    margin-inline: 4rem;
-    padding-block: .5rem;
-    border-radius: 2rem;
     text-align: center;
 
     p {
+        border-radius: 2rem;
+        padding: .5rem;
+        background-color: $neutral-300;
+        width: fit-content;
         color: $primary;
     }
 }
@@ -166,14 +180,5 @@ main {
 
     &__body {
         @include paragraph;
-    }
-}
-
-.attribution {
-    color: $neutral-100;
-    
-    a {
-        color: $primary;
-        text-decoration: none;
     }
 }

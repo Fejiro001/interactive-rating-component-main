@@ -2,10 +2,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-* {
   margin: 0;
+  padding: 0;
 }
 
 img,
@@ -37,6 +35,7 @@ h6 {
 body {
   line-height: 1.5;
   font-family: "Overpass", sans-serif;
+  height: 100vh;
   background-color: hsl(216, 12%, 8%);
 }
 
@@ -46,18 +45,18 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 /* RATING */
 .rating {
   background-color: hsl(213, 19%, 18%);
-  width: 24rem;
+  max-width: 24rem;
   padding: 1.5rem;
-  margin: 1.5rem;
+  margin: 1rem;
   border-radius: 1.5rem;
   display: grid;
   gap: 1.5rem;
+  position: relative;
 }
 
 .star {
@@ -68,7 +67,7 @@ main {
   border-radius: 50%;
 }
 .star__icon {
-  max-width: 100%;
+  width: 100%;
 }
 
 .feedback {
@@ -86,12 +85,18 @@ main {
   font-size: 0.9rem;
   color: hsl(217, 12%, 63%);
 }
+@media (min-width: 800px) {
+  .feedback__body {
+    font-size: 0.9rem;
+  }
+}
 
 .rate {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 0.5rem;
   padding: 0;
 }
 .rate li {
@@ -103,8 +108,9 @@ main {
 .rate button {
   border-radius: 50%;
   border: none;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1rem;
   background-color: hsla(216, 12%, 54%, 0.15);
   color: hsl(217, 12%, 63%);
 }
@@ -117,6 +123,12 @@ main {
   background-color: hsl(25, 97%, 53%);
   color: hsl(0, 0%, 100%);
 }
+@media (min-width: 400px) {
+  .rate button {
+    width: 3rem;
+    height: 3rem;
+  }
+}
 
 .submit {
   background-color: hsl(25, 97%, 53%);
@@ -126,6 +138,7 @@ main {
   padding-block: 0.8rem;
   text-transform: uppercase;
   font-weight: 700;
+  font-size: 1rem;
   letter-spacing: 2px;
   cursor: pointer;
 }
@@ -136,9 +149,9 @@ main {
 
 .thank-you {
   background-color: hsl(213, 19%, 18%);
-  width: 24rem;
+  max-width: 24rem;
   padding: 1.5rem;
-  margin: 1.5rem;
+  margin: 1rem;
   border-radius: 1.5rem;
   display: grid;
   gap: 1.5rem;
@@ -152,13 +165,14 @@ main {
 }
 
 .answer {
-  background-color: hsla(216, 12%, 54%, 0.15);
-  margin-inline: 4rem;
-  padding-block: 0.5rem;
-  border-radius: 2rem;
   text-align: center;
 }
 .answer p {
+  border-radius: 2rem;
+  padding: 0.5rem;
+  background-color: hsla(216, 12%, 54%, 0.15);
+  width: -moz-fit-content;
+  width: fit-content;
   color: hsl(25, 97%, 53%);
 }
 
@@ -177,11 +191,8 @@ main {
   font-size: 0.9rem;
   color: hsl(217, 12%, 63%);
 }
-
-.attribution {
-  color: hsl(0, 0%, 100%);
-}
-.attribution a {
-  color: hsl(25, 97%, 53%);
-  text-decoration: none;
+@media (min-width: 800px) {
+  .confirmed__body {
+    font-size: 0.9rem;
+  }
 }

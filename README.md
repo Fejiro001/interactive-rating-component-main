@@ -30,7 +30,7 @@ Users should be able to:
 ### Screenshot
 
 - Feedback component
-![Feedback](./screenshots/thank-you-modal.png)
+![Feedback](./screenshots/feedback.png)
 
 - Feedback component when in active and focus states
 ![Active and Focus states](./screenshots/active-focus-states.png)
