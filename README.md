@@ -40,7 +40,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://github.com/Fejiro001/interactive-rating-component-main)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/responsive-interactive-and-accessible-rating-component-using-css-grid-2yZs0Ct44e)
 - Live Site URL: [Live Site](https://fejiro001.github.io/interactive-rating-component-main/)
 
 ## My process
